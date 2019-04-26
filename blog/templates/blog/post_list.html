@@ -3,20 +3,31 @@
         <title>Django Girls blog</title>
     </head>
     <body>
+	<div>
+        {{ posts }}
+    </div>
+    {% for post in posts %}
         <div>
-			<h1>お気に入り本棚</h1>
-			<p>最終更新日: 25.04.2019, 16:02</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
+    {% endfor %}
+	<div>
+		<h1>お気に入り本棚</h1>
+		<p>最終更新日: 25.04.2019, 16:02</p>
+    </div>
 
-        <div>
-            <h2><a href="https://www.aozora.gr.jp/cards/000035/files/1567_14913.html">走れメロス</a></h2>
-            <p>Aenean eu leo quam. こんにちは！ よろしくお願いします！ </p>
-        </div>
+    <div>
+        <h2><a href="https://www.aozora.gr.jp/cards/000035/files/1567_14913.html">走れメロス</a></h2>
+        <p>友情のためにメロスが走る． </p>
+    </div>
 
-        <div>
-            <p>公開日: 2014/06/14, 12:14</p>
-            <h2><a href="https://www.aozora.gr.jp/cards/001779/files/57228_58735.html">怪人二十面相</a></h2>
-            <p> こんにちは！ よろしくお願いします！ </p>
-        </div>
-    </body>
+    <div>
+        <p>公開日: 2014/06/14, 12:14</p>
+        <h2><a href="https://www.aozora.gr.jp/cards/001779/files/57228_58735.html">怪人二十面相</a></h2>
+        <p>怪人と探偵の真剣勝負</p>
+    </div>
+	</body>
+	<link rel="stylesheet" type="text/css" href="text.css">
 </html>
